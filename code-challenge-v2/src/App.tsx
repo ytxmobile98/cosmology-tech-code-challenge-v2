@@ -1,30 +1,22 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components';
 
-const Button = styled.button<{ $primary?: boolean; }>`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid #BF4F74;
-  color: #BF4F74;
-  margin: 0.5em 1em;
-  padding: 0.25em 1em;
+import Title from './title';
 
-  ${props => props.$primary && css`
-    background: #BF4F74;
-    color: white;
-  `}
-`;
-
-const Container = styled.div`
-  text-align: center;
+const Wrapper = styled.div`
+  width: 40%;
+  margin: auto;
 `;
 
 function App() {
   return (
-    <Container>
-      <Button>Normal Button</Button>
-      <Button $primary>Primary Button</Button>
-    </Container>
+    <Wrapper>
+      <Title>Deposit Atom</Title>
+    </Wrapper>
   );
 }
 
-export default App;
+const StyledApp = styled(App)`
+  margin: auto;
+`;
+
+export default StyledApp;
