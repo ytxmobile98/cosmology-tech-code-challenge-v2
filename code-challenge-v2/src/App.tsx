@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import BottomButtons from './bottom-buttons';
 import Title from './title';
 
 const Wrapper = styled.div`
@@ -11,6 +12,7 @@ function App() {
   return (
     <Wrapper>
       <Title>Deposit Atom</Title>
+      <BottomButtons />
     </Wrapper>
   );
 }
