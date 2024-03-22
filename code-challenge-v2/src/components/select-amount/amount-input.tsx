@@ -33,11 +33,16 @@ const StyledAmountInput = styled(AmountInput)`
 function Icon({ className }: {
   className?: string
 }) {
-  return <div className={className}>Icon</div>;
+  return <div className={className}>
+    <img src='atom.svg' alt='ATOM' width='48' />
+  </div>;
 }
 
 const StyledIcon = styled(Icon)`
   padding: 0.5em;
+
+  display: flex;
+  align-items: center;
 
   border-right: 2px solid gray;
 `;
@@ -60,8 +65,10 @@ const StyledAmountInputAndDisplay = styled(AmountInputAndDisplay)`
   flex-grow: 1;
 
   display: flex;
+  align-items: center;
 
-  padding: 0.5em;
+  padding: 1em;
+  font-size: 1.2em;
 `
 
 function Input({ className, amount, setAmount }: {
@@ -76,7 +83,10 @@ function Input({ className, amount, setAmount }: {
 
 const StyledInput = styled(Input)`
   flex-grow: 1;
+
   border: none;
+
+  font-size: inherit;
 `;
 
 export default StyledAmountInput;
