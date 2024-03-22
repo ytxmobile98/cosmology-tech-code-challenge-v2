@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-import BottomButtons from './bottom-buttons';
-import Title from './title';
-import EstimatedTime from './estimated-time';
-import SelectAmount from './select-amount';
-import FromTo from './from-to';
+import BottomButtons from './components/bottom-buttons';
+import Title from './components/title';
+import EstimatedTime from './components/estimated-time';
+import SelectAmount from './components/select-amount';
+import FromTo from './components/from-to';
 
 const Wrapper = styled.div`
   width: 40%;
