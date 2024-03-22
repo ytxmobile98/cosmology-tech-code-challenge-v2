@@ -36,7 +36,7 @@ function PersonImageAndTokenWrapper({ className, image, token, editButton }: {
 }
 
 const StyledPersonImageAndTokenWrapper = styled(PersonImageAndTokenWrapper)`
-  padding: 0.25em;
+  padding: 1em 0.5em;
   border-radius: 0.25em;
 
   display: flex;
@@ -45,6 +45,7 @@ const StyledPersonImageAndTokenWrapper = styled(PersonImageAndTokenWrapper)`
   gap: 0.5em;
 
   background-color: #eef2f8;
+  color: gray;
 `;
 
 function From({ person }: {
