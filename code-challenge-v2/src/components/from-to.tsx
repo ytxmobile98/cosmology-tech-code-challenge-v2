@@ -7,8 +7,6 @@ export type Person = {
 };
 
 const PersonWrapper = styled.div<{ $column: number }>`
-  margin: 1em 0;
-
   display: grid;
   grid-row: 1 / -1;
   grid-column: ${props => props.$column} / ${props => props.$column + 1};
@@ -138,6 +136,8 @@ function FromTo({ className, from, to }: {
 }
 
 const StyledFromTo = styled(FromTo)`
+  margin: 1em 0 2em 0;
+
   display: grid;
   grid-template-columns: 4fr 1fr 5fr;
   grid-template-rows: repeat(2, auto);
