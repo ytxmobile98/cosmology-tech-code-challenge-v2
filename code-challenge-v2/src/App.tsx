@@ -7,7 +7,7 @@ import SelectAmount from './components/select-amount';
 import FromTo from './components/from-to';
 
 const Wrapper = styled.div`
-  width: 40%;
+  width: 600px;
   margin: auto;
 `;
 
