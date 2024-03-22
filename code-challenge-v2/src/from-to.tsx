@@ -74,6 +74,21 @@ function To({ person }: {
   );
 }
 
+function Arrow({ className }: {
+  className?: string;
+}) {
+  return (
+    <div className={className}>→</div>
+  );
+}
+
+const StyledArrow = styled(Arrow)`
+  grid-row: 2;
+
+  font-size: 1.5em;
+  font-weight: bold;
+`;
+
 function FromTo({ className, from, to }: {
   className?: string;
   from: Person;
@@ -82,6 +97,7 @@ function FromTo({ className, from, to }: {
   return (
     <div className={className}>
       <From person={from} />
+      <StyledArrow />
       <To person={to} />
     </div>
   );
