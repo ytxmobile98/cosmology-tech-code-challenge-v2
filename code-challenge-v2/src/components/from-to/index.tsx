@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 import Arrow from './arrow';
 import EditButton from './edit-button';
+import PersonHeader from './person-header';
 import PersonImage from './person-image';
 import Token from './token';
 
@@ -17,19 +18,6 @@ const PersonWrapper = styled.div<{ $column: number }>`
   grid-column: ${props => props.$column} / ${props => props.$column + 1};
   grid-template-rows: subgrid;
   grid-row-gap: 0.5em;
-`;
-
-function PersonHeader({ className, children }: {
-  className?: string;
-  children: string[];
-}) {
-  return (
-    <h2 className={className}>{children.join('')}</h2>
-  );
-}
-
-const StyledPersonHeader = styled(PersonHeader)`
-  font-size: 1em;
 `;
 
 function PersonImageAndTokenWrapper({ className, image, token, editButton }: {
@@ -64,7 +52,7 @@ function From({ person }: {
 }) {
   return (
     <PersonWrapper $column={1}>
-      <StyledPersonHeader>From {person.name}</StyledPersonHeader>
+      <PersonHeader>From {person.name}</PersonHeader>
       <StyledPersonImageAndTokenWrapper image={person.image} token={person.token}/>
     </PersonWrapper>
   );
@@ -75,7 +63,7 @@ function To({ person }: {
 }) {
   return (
     <PersonWrapper $column={3}>
-      <StyledPersonHeader>To {person.name}</StyledPersonHeader>
+      <PersonHeader>To {person.name}</PersonHeader>
       <StyledPersonImageAndTokenWrapper image={person.image} token={person.token} editButton={true} />
     </PersonWrapper>
   );
