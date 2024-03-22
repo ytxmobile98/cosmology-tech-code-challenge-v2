@@ -40,6 +40,9 @@ function PersonIconAndTokenWrapper({ className, image, token, editIcon }: {
 }
 
 const StyledPersonIconAndTokenWrapper = styled(PersonIconAndTokenWrapper)`
+  padding: 0.25em;
+  border-radius: 0.25em;
+
   display: flex;
   flex-direction: row;
   align-items: center;
