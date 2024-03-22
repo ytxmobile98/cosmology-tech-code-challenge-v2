@@ -47,6 +47,21 @@ const StyledIcon = styled(Icon)`
   border-right: 2px solid gray;
 `;
 
+function AtomValue({ className, amount, amountToValue }: {
+  className?: string;
+  amount: number;
+  amountToValue: (amount: number) => number;
+}) {
+  return (
+    <div className={className}><strong>ATOM</strong> ≈ ${amountToValue(amount).toFixed(0)}</div>
+  );
+}
+
+const StyledAtomValue = styled(AtomValue)`
+  font-size: 0.8em;
+  color: gray;
+`;
+
 function AmountInputAndDisplay({ className, amount, setAmount, amountToValue }: {
   className?: string;
   amount: number;
@@ -56,7 +71,7 @@ function AmountInputAndDisplay({ className, amount, setAmount, amountToValue }: 
   return (
     <div className={className}>
       <StyledInput amount={amount} setAmount={setAmount} />
-      <div><strong>ATOM</strong> ≈ ${amountToValue(amount).toFixed(2)}</div>
+      <StyledAtomValue amount={amount} amountToValue={amountToValue} />
     </div>
   );
 }
