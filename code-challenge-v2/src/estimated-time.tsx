@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background-color: lightgray;
+  background-color: gainsboro;
   font-weight: 500;
 `;
 

@@ -34,7 +34,7 @@ function PersonIconAndTokenWrapper({ className, image, token, editIcon }: {
     <div className={className}>
       <PersonImage src={image} />
       <Token>{token}</Token>
-      {editIcon && <button>Edit</button>}
+      {editIcon && <StyledEditButton />}
     </div>
   );
 }
@@ -43,10 +43,8 @@ const StyledPersonIconAndTokenWrapper = styled(PersonIconAndTokenWrapper)`
   display: flex;
   flex-direction: row;
   align-items: center;
-`;
 
-const Token = styled.div`
-  flex-grow: 1;
+  background-color: gainsboro;
 `;
 
 function PersonImage({ src }: {
@@ -56,6 +54,23 @@ function PersonImage({ src }: {
     <img src={src} />
   );
 }
+
+const Token = styled.div`
+  flex-grow: 1;
+`;
+
+function EditButton({ className }: {
+  className?: string;
+}) {
+  return (
+    <button className={className}>🖊</button>
+  );
+}
+
+const StyledEditButton = styled(EditButton)`
+  background-color: transparent;
+  content: '+';
+`;
 
 function From({ person }: {
   person: Person;
@@ -83,15 +98,21 @@ function Arrow({ className }: {
   className?: string;
 }) {
   return (
-    <div className={className}>→</div>
+    <div className={className}>
+      <div className={className}>→</div>
+    </div>
   );
 }
 
 const StyledArrow = styled(Arrow)`
   grid-row: 2;
 
-  font-size: 1.5em;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  font-size: 1.25em;
 `;
 
 function FromTo({ className, from, to }: {
