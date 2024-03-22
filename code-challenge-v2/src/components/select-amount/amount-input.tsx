@@ -8,6 +8,7 @@ function AmountInput({ className, amount, setAmount, amountToValue }: {
 }) {
   return (
     <AmountInputWrapper>
+      <StyledIcon />
       <div className={className}>
         <input value={amount} onInput={event => setAmount(parseInt((event.target as HTMLInputElement).value) || 0)} />
         <div><strong>ATOM</strong> ≈ ${amountToValue(amount).toFixed(2)}</div>
@@ -17,7 +18,20 @@ function AmountInput({ className, amount, setAmount, amountToValue }: {
 }
 
 const AmountInputWrapper = styled.div`
-  display: table;
+  display: flex;
+`;
+
+function Icon({ className }: {
+  className?: string
+}) {
+  return <div className={className}>Icon</div>;
+}
+
+const StyledIcon = styled(Icon)`
+  border: 2px solid gray;
+
+  border-top-left-radius: 0.25em;
+  border-bottom-left-radius: 0.25em;
 `;
 
 const StyledAmountInput = styled(AmountInput)`
