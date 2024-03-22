@@ -6,26 +6,32 @@ export type Person = {
   image: string;
 };
 
-const PersonWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+const PersonWrapper = styled.div<{ $column: number }>`
+  display: grid;
+  grid-row: 1 / -1;
+  grid-column: ${props => props.$column} / ${props => props.$column + 1};
+  grid-template-rows: subgrid;
 `;
 
-function PersonHeader({ children }: {
+function PersonHeader({ className, children }: {
+  className?: string;
   children: string[];
 }) {
   return (
-    <h2>{children.join('')}</h2>
+    <h2 className={className}>{children.join('')}</h2>
   );
 }
 
-function PersonIconWrapper({ image, token, editIcon }: {
+const StyledPersonHeader = styled(PersonHeader)``;
+
+function PersonIconWrapper({ className, image, token, editIcon }: {
+  className?: string;
   image: string;
   token: string;
   editIcon?: boolean;
 }) {
   return (
-    <div>
+    <div className={className}>
       <PersonImage src={image} />
       <span>{token}</span>
       {editIcon && <button>Edit</button>}
@@ -50,8 +56,8 @@ function From({ person }: {
   person: Person;
 }) {
   return (
-    <PersonWrapper>
-      <PersonHeader>From {person.name}</PersonHeader>
+    <PersonWrapper $column={1}>
+      <StyledPersonHeader>From {person.name}</StyledPersonHeader>
       <StyledPersonIconWrapper image={person.image} token={person.token}/>
     </PersonWrapper>
   );
@@ -61,23 +67,30 @@ function To({ person }: {
   person: Person;
 }) {
   return (
-    <PersonWrapper>
-      <PersonHeader>To {person.name}</PersonHeader>
+    <PersonWrapper $column={3}>
+      <StyledPersonHeader>To {person.name}</StyledPersonHeader>
       <StyledPersonIconWrapper image={person.image} token={person.token} editIcon={true} />
     </PersonWrapper>
   );
 }
 
-function FromTo({ from, to }: {
+function FromTo({ className, from, to }: {
+  className?: string;
   from: Person;
   to: Person;
 }) {
   return (
-    <div>
+    <div className={className}>
       <From person={from} />
       <To person={to} />
     </div>
   );
 }
 
-export default FromTo;
+const StyledFromTo = styled(FromTo)`
+  display: grid;
+  grid-template-columns: 4fr 1fr 5fr;
+  grid-template-rows: repeat(2, auto);
+`;
+
+export default StyledFromTo;
