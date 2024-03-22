@@ -29,6 +29,8 @@ const StyledAmountSelector = styled(AmountSelector)`
   display: flex;
   justify-content: flex-end;
   gap: 0.5em;
+
+  margin: 0.5em 0;
 `;
 
 export default StyledAmountSelector;

@@ -9,15 +9,24 @@ function AmountInput({ className, amount, setAmount, amountToValue }: {
   return (
     <AmountInputWrapper>
       <StyledIcon />
-      <div className={className}>
-        <input value={amount} onInput={event => setAmount(parseInt((event.target as HTMLInputElement).value) || 0)} />
-        <div><strong>ATOM</strong> ≈ ${amountToValue(amount).toFixed(2)}</div>
-      </div>
+      <StyledAmountInputAndDisplay
+        className={className}
+        amount={amount}
+        setAmount={setAmount}
+        amountToValue={amountToValue}
+      />
     </AmountInputWrapper>
   );
 }
 
 const AmountInputWrapper = styled.div`
+  display: flex;
+
+  border: 2px solid gray;
+  border-radius: 0.25em;
+`;
+
+const StyledAmountInput = styled(AmountInput)`
   display: flex;
 `;
 
@@ -28,14 +37,46 @@ function Icon({ className }: {
 }
 
 const StyledIcon = styled(Icon)`
-  border: 2px solid gray;
+  padding: 0.5em;
 
-  border-top-left-radius: 0.25em;
-  border-bottom-left-radius: 0.25em;
+  border-right: 2px solid gray;
 `;
 
-const StyledAmountInput = styled(AmountInput)`
+function AmountInputAndDisplay({ className, amount, setAmount, amountToValue }: {
+  className?: string;
+  amount: number;
+  setAmount: (amount: number) => void;
+  amountToValue: (amount: number) => number;
+}) {
+  return (
+    <div className={className}>
+      <StyledInput amount={amount} setAmount={setAmount} />
+      <div><strong>ATOM</strong> ≈ ${amountToValue(amount).toFixed(2)}</div>
+    </div>
+  );
+}
+
+const StyledAmountInputAndDisplay = styled(AmountInputAndDisplay)`
+  flex-grow: 1;
+
   display: flex;
+
+  padding: 0.5em;
+`
+
+function Input({ className, amount, setAmount }: {
+  className?: string;
+  amount: number;
+  setAmount: (amount: number) => void;
+}) {
+  return (
+    <input className={className} value={amount} onInput={event => setAmount(parseInt((event.target as HTMLInputElement).value) || 0)} />
+  );
+}
+
+const StyledInput = styled(Input)`
+  flex-grow: 1;
+  border: none;
 `;
 
 export default StyledAmountInput;
