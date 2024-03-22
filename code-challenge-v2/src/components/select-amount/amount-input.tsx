@@ -8,7 +8,7 @@ function AmountInput({ className, amount, setAmount, amountToValue }: {
 }) {
   return (
     <AmountInputWrapper>
-      <StyledIcon />
+      <StyledAtomIcon />
       <StyledAmountInputAndDisplay
         className={className}
         amount={amount}
@@ -30,15 +30,17 @@ const StyledAmountInput = styled(AmountInput)`
   display: flex;
 `;
 
-function Icon({ className }: {
+function AtomIcon({ className }: {
   className?: string
 }) {
-  return <div className={className}>
-    <img src='atom.svg' alt='ATOM' width='48' />
-  </div>;
+  return (
+    <div className={className}>
+      <img src='atom.svg' alt='ATOM' width='48' />
+    </div>
+  );
 }
 
-const StyledIcon = styled(Icon)`
+const StyledAtomIcon = styled(AtomIcon)`
   padding: 0.5em;
 
   display: flex;
