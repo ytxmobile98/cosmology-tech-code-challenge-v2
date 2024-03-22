@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+import Arrow from './arrow';
+import EditButton from './edit-button';
+import PersonImage from './person-image';
+import Token from './token';
+
 export type Person = {
   name: string;
   token: string;
@@ -27,22 +32,22 @@ const StyledPersonHeader = styled(PersonHeader)`
   font-size: 1em;
 `;
 
-function PersonIconAndTokenWrapper({ className, image, token, editIcon }: {
+function PersonImageAndTokenWrapper({ className, image, token, editButton }: {
   className?: string;
   image: string;
   token: string;
-  editIcon?: boolean;
+  editButton?: boolean;
 }) {
   return (
     <div className={className}>
       <PersonImage src={image} />
       <Token>{token}</Token>
-      {editIcon && <StyledEditButton />}
+      {editButton && <EditButton />}
     </div>
   );
 }
 
-const StyledPersonIconAndTokenWrapper = styled(PersonIconAndTokenWrapper)`
+const StyledPersonImageAndTokenWrapper = styled(PersonImageAndTokenWrapper)`
   padding: 0.25em;
   border-radius: 0.25em;
 
@@ -54,41 +59,13 @@ const StyledPersonIconAndTokenWrapper = styled(PersonIconAndTokenWrapper)`
   background-color: gainsboro;
 `;
 
-function PersonImage({ src }: {
-  src: string;
-}) {
-  return (
-    <img src={src} />
-  );
-}
-
-const Token = styled.div`
-  flex-grow: 1;
-`;
-
-function EditButton({ className }: {
-  className?: string;
-}) {
-  return (
-    <button className={className}>
-      <img src='edit.svg' alt='Edit' />
-    </button>
-  );
-}
-
-const StyledEditButton = styled(EditButton)`
-  padding: 0;
-
-  background-color: transparent;
-`;
-
 function From({ person }: {
   person: Person;
 }) {
   return (
     <PersonWrapper $column={1}>
       <StyledPersonHeader>From {person.name}</StyledPersonHeader>
-      <StyledPersonIconAndTokenWrapper image={person.image} token={person.token}/>
+      <StyledPersonImageAndTokenWrapper image={person.image} token={person.token}/>
     </PersonWrapper>
   );
 }
@@ -99,31 +76,10 @@ function To({ person }: {
   return (
     <PersonWrapper $column={3}>
       <StyledPersonHeader>To {person.name}</StyledPersonHeader>
-      <StyledPersonIconAndTokenWrapper image={person.image} token={person.token} editIcon={true} />
+      <StyledPersonImageAndTokenWrapper image={person.image} token={person.token} editButton={true} />
     </PersonWrapper>
   );
 }
-
-function Arrow({ className }: {
-  className?: string;
-}) {
-  return (
-    <div className={className}>
-      <div className={className}>→</div>
-    </div>
-  );
-}
-
-const StyledArrow = styled(Arrow)`
-  grid-row: 2;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-  font-size: 1.25em;
-`;
 
 function FromTo({ className, from, to }: {
   className?: string;
@@ -133,7 +89,7 @@ function FromTo({ className, from, to }: {
   return (
     <div className={className}>
       <From person={from} />
-      <StyledArrow />
+      <Arrow />
       <To person={to} />
     </div>
   );
