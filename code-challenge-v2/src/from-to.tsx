@@ -24,7 +24,7 @@ function PersonHeader({ className, children }: {
 
 const StyledPersonHeader = styled(PersonHeader)``;
 
-function PersonIconWrapper({ className, image, token, editIcon }: {
+function PersonIconAndTokenWrapper({ className, image, token, editIcon }: {
   className?: string;
   image: string;
   token: string;
@@ -33,15 +33,20 @@ function PersonIconWrapper({ className, image, token, editIcon }: {
   return (
     <div className={className}>
       <PersonImage src={image} />
-      <span>{token}</span>
+      <Token>{token}</Token>
       {editIcon && <button>Edit</button>}
     </div>
   );
 }
 
-const StyledPersonIconWrapper = styled(PersonIconWrapper)`
+const StyledPersonIconAndTokenWrapper = styled(PersonIconAndTokenWrapper)`
   display: flex;
   flex-direction: row;
+  align-items: center;
+`;
+
+const Token = styled.div`
+  flex-grow: 1;
 `;
 
 function PersonImage({ src }: {
@@ -58,7 +63,7 @@ function From({ person }: {
   return (
     <PersonWrapper $column={1}>
       <StyledPersonHeader>From {person.name}</StyledPersonHeader>
-      <StyledPersonIconWrapper image={person.image} token={person.token}/>
+      <StyledPersonIconAndTokenWrapper image={person.image} token={person.token}/>
     </PersonWrapper>
   );
 }
@@ -69,7 +74,7 @@ function To({ person }: {
   return (
     <PersonWrapper $column={3}>
       <StyledPersonHeader>To {person.name}</StyledPersonHeader>
-      <StyledPersonIconWrapper image={person.image} token={person.token} editIcon={true} />
+      <StyledPersonIconAndTokenWrapper image={person.image} token={person.token} editIcon={true} />
     </PersonWrapper>
   );
 }
