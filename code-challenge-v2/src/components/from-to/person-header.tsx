@@ -11,6 +11,7 @@ function PersonHeader({ className, children }: {
 
 const StyledPersonHeader = styled(PersonHeader)`
   font-size: 1em;
+  color: gray;
 `;
 
 export default StyledPersonHeader;
