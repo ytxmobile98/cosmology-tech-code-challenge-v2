@@ -66,6 +66,7 @@ const StyledAmountInputAndDisplay = styled(AmountInputAndDisplay)`
 
   display: flex;
   align-items: center;
+  gap: 0.5em;
 
   padding: 1em;
   font-size: 1.2em;
