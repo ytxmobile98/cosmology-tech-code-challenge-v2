@@ -82,7 +82,7 @@ function SelectAmount({ availableAmount }: {
 }) {
   const [amount, setAmount] = useState(availableAmount);
 
-  function handleSelectPercentage(percentage: number) {
+  const handleSelectPercentage = (percentage: number) => {
     setAmount(availableAmount * percentage);
   }
 
