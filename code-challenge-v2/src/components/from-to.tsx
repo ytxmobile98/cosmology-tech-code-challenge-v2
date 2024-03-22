@@ -49,6 +49,7 @@ const StyledPersonIconAndTokenWrapper = styled(PersonIconAndTokenWrapper)`
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 0.5em;
 
   background-color: gainsboro;
 `;
@@ -69,13 +70,16 @@ function EditButton({ className }: {
   className?: string;
 }) {
   return (
-    <button className={className}>🖊</button>
+    <button className={className}>
+      <img src='edit.svg' alt='Edit' />
+    </button>
   );
 }
 
 const StyledEditButton = styled(EditButton)`
+  padding: 0;
+
   background-color: transparent;
-  content: '+';
 `;
 
 function From({ person }: {
