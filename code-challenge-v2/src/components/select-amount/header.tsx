@@ -15,6 +15,8 @@ function HeaderWrapper({ className, availableAmount }: {
 const StyledHeaderWrapper = styled(HeaderWrapper)`
   display: flex;
   align-items: baseline;
+
+  margin: 0.5em 0;
 `;
 
 const SelectAmountHeader = styled.h2`

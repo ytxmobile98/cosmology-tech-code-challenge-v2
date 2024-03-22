@@ -30,7 +30,7 @@ const StyledAmountSelector = styled(AmountSelector)`
   justify-content: flex-end;
   gap: 0.5em;
 
-  margin: 0.5em 0;
+  margin: 1em 0;
 `;
 
 export default StyledAmountSelector;

@@ -7,10 +7,13 @@ export type Person = {
 };
 
 const PersonWrapper = styled.div<{ $column: number }>`
+  margin: 1em 0;
+
   display: grid;
   grid-row: 1 / -1;
   grid-column: ${props => props.$column} / ${props => props.$column + 1};
   grid-template-rows: subgrid;
+  grid-row-gap: 0.5em;
 `;
 
 function PersonHeader({ className, children }: {
@@ -22,7 +25,9 @@ function PersonHeader({ className, children }: {
   );
 }
 
-const StyledPersonHeader = styled(PersonHeader)``;
+const StyledPersonHeader = styled(PersonHeader)`
+  font-size: 1em;
+`;
 
 function PersonIconAndTokenWrapper({ className, image, token, editIcon }: {
   className?: string;
