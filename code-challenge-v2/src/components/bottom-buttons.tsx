@@ -1,6 +1,8 @@
 import { styled } from 'styled-components';
 
 const Wrapper = styled.div`
+  margin-top: 1.5em;
+
   display: flex;
   flex-direction: column;
 `;
@@ -12,6 +14,8 @@ const TransferButton = styled.button`
   color: white;
 `;
 const CancelButton = styled.button`
+  padding: 1em 0;
+
   background-color: transparent;
   color: gray;
 `;
