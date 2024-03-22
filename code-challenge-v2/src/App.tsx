@@ -18,11 +18,11 @@ function App() {
       <FromTo from={{
         name: 'Cosmos Hub',
         token: 'atom1xy5y…m6wwz9a',
-        image: '',
+        image: 'atom.svg',
       }} to={{
         name: 'Osmosis',
         token: 'osmo1xy5y…w9a',
-        image: '',
+        image: 'osmosis.svg',
       }} />
       <SelectAmount availableAmount={2} />
       <EstimatedTime time='20 seconds' />

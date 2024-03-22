@@ -2,7 +2,7 @@ function PersonImage({ src }: {
   src: string;
 }) {
   return (
-    <img src={src} />
+    <img src={src} height='24' />
   );
 }
 
