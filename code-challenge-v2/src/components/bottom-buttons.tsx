@@ -6,6 +6,8 @@ const Wrapper = styled.div`
 `;
 
 const TransferButton = styled.button`
+  padding: 1.5em 0;
+
   background-color: black;
   color: white;
 `;
