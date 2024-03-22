@@ -16,9 +16,9 @@ function AmountSelector({ className, proportions, handleSelectPercentage }: {
         }
 
         return (
-          <button key={proportion} onClick={() => handleSelectPercentage(percentage)}>
+          <StyledButton key={proportion} onClick={() => handleSelectPercentage(percentage)}>
             {proportion}
-          </button>
+          </StyledButton>
         );
       })}
     </div>
@@ -32,5 +32,11 @@ const StyledAmountSelector = styled(AmountSelector)`
 
   margin: 1em 0;
 `;
+
+const StyledButton = styled.button`
+  font-weight: 500;
+  background-color: #eef2f8;
+  color: gray;
+`
 
 export default StyledAmountSelector;

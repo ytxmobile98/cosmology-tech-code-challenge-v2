@@ -6,7 +6,7 @@ const Wrapper = styled.div`
 
   border-radius: 0.25em;
 
-  background-color: gainsboro;
+  background-color: #eef2f8;
   font-weight: 500;
 `;
 

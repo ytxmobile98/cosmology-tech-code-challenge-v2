@@ -12,7 +12,7 @@ const TitleText = styled.h1`
 `;
 
 const CloseButton = styled.button`
-  background-color: light-gray;
+  background-color: #eef2f8;
   color: dark-gray;
 `;
 

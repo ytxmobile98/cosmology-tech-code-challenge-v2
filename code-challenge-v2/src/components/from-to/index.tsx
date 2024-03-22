@@ -56,7 +56,7 @@ const StyledPersonImageAndTokenWrapper = styled(PersonImageAndTokenWrapper)`
   align-items: center;
   gap: 0.5em;
 
-  background-color: gainsboro;
+  background-color: #eef2f8;
 `;
 
 function From({ person }: {
