@@ -17,6 +17,8 @@ const StyledHeaderWrapper = styled(HeaderWrapper)`
   align-items: baseline;
 
   margin: 0.5em 0;
+
+  color: gray;
 `;
 
 const SelectAmountHeader = styled.h2`
