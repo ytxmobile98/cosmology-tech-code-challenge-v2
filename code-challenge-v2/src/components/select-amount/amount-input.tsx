@@ -85,8 +85,6 @@ const StyledInput = styled(Input)`
   flex-grow: 1;
 
   border: none;
-
-  font-size: inherit;
 `;
 
 export default StyledAmountInput;
