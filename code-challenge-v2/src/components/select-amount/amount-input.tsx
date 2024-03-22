@@ -24,38 +24,4 @@ const StyledAmountInput = styled(AmountInput)`
   display: flex;
 `;
 
-function AmountSelector({ className, proportions, handleSelectPercentage: handleSelectProportion }: {
-  className?: string;
-  proportions: string[];
-  handleSelectPercentage: (percentage: number) => void;
-}) {
-  return (
-    <div className={className}>
-      {proportions.map(proportion => {
-        let percentage = 1;
-        if (proportion.toLowerCase() === 'max') {
-          percentage = 1;
-        } else {
-          percentage = eval(proportion);
-        }
-
-        return (
-          <button key={proportion} onClick={() => handleSelectProportion(percentage)}>
-            {proportion}
-          </button>
-        );
-      })}
-    </div>
-  );
-}
-
-const StyledAmountSelector = styled(AmountSelector)`
-  display: flex;
-  justify-content: flex-end;
-  gap: 0.5em;
-`;
-
-export {
-  StyledAmountInput as AmountInput,
-  StyledAmountSelector as AmountSelector
-};
+export default StyledAmountInput;

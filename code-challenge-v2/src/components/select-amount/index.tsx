@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
 import HeaderWrapper from './header';
-import { AmountInput, AmountSelector } from './amount-input';
+import AmountInput from './amount-input';
+import AmountSelector from './amount-selector';
 
 function SelectAmount({ availableAmount }: {
   availableAmount: number;
