@@ -61,7 +61,7 @@ function AtomValue({ className, amount, amountToValue }: {
 
 const StyledAtomValue = styled(AtomValue)`
   font-size: 0.8em;
-  color: gray;
+  color: var(--secondary-text-color);
 `;
 
 function AmountInputAndDisplay({ className, amount, setAmount, amountToValue }: {
@@ -103,6 +103,7 @@ const StyledInput = styled(Input)`
   flex-grow: 1;
 
   border: none;
+  background-color: transparent;
 `;
 
 export default StyledAmountInput;

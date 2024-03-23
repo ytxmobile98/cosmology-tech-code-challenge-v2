@@ -44,8 +44,8 @@ const StyledPersonImageAndTokenWrapper = styled(PersonImageAndTokenWrapper)`
   align-items: center;
   gap: 0.5em;
 
-  background-color: #eef2f8;
-  color: gray;
+  background-color: var(--accent-color);
+  color: var(--secondary-text-color);
 `;
 
 function From({ person }: {

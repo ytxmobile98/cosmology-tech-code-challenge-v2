@@ -12,8 +12,10 @@ const TitleText = styled.h1`
 `;
 
 const CloseButton = styled.button`
-  background-color: #eef2f8;
-  color: dark-gray;
+  padding: 0.5em;
+
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
 `;
 
 export default function Title({ children }: {

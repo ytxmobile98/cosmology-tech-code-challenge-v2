@@ -4,8 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -67,13 +65,30 @@ input {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --primary-background-color: #fffeff;
+
+    --primary-text-color: #30343b;
+    --secondary-text-color: #747f8e;
+
+    --accent-color: #eef2f8;
+    --input-border-color: #dde1e6;
+
+    --primary-action-background-color: #2b3037;
+    --primary-action-text-color: #fffeff;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-background-color: #212428;
+
+    --primary-text-color: #edf1f7;
+    --secondary-text-color: #677381;
+
+    --accent-color: #131416;
+    --input-border-color: #353b43;
+
+    --primary-action-background-color: #eef1f7;
+    --primary-action-text-color: #30343b;
   }
 }

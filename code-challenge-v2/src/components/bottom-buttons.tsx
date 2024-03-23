@@ -10,14 +10,15 @@ const Wrapper = styled.div`
 const TransferButton = styled.button`
   padding: 1.5em 0;
 
-  background-color: black;
-  color: white;
+  background-color: var(--primary-action-background-color);
+  color: var(--primary-action-text-color);
+  font-weight: bold;
 `;
 const CancelButton = styled.button`
   padding: 1em 0;
 
   background-color: transparent;
-  color: gray;
+  color: var(--secondary-text-color);
 `;
 
 function BottomButtons() {

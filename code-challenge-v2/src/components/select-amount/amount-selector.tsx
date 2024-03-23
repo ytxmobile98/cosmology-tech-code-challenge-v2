@@ -34,9 +34,10 @@ const StyledAmountSelector = styled(AmountSelector)`
 `;
 
 const StyledButton = styled.button`
+  background-color: var(--accent-color);
+  color: var(--secondary-text-color);
+
   font-weight: 500;
-  background-color: #eef2f8;
-  color: gray;
 `
 
 export default StyledAmountSelector;

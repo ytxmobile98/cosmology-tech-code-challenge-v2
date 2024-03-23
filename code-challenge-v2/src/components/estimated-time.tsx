@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   gap: 1em;
 
   border-radius: 0.25em;
-  background-color: #eef2f8;
+  background-color: var(--accent-color);
+  color: var(--primary-text-color);
   font-weight: 500;
 `;
 
